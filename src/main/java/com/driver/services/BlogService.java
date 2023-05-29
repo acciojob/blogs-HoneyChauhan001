@@ -34,7 +34,7 @@ public class BlogService {
 
         user.getBlogList().add(blog);
         User savedUser = userRepository1.save(user);
-        int size = user.getBlogList().size();
+        int size = savedUser.getBlogList().size();
         Blog savedBlog = savedUser.getBlogList().get(size-1);
 
         return savedBlog;
