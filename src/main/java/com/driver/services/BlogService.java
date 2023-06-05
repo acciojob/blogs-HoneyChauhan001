@@ -32,10 +32,10 @@ public class BlogService {
         blog.setTitle(title);
         blog.setUser(user);
 
-        user.getBlogList().add(blog);
+        Blog savedBlog = blogRepository1.save(blog);
+
+        user.getBlogList().add(savedBlog);
         User savedUser = userRepository1.save(user);
-        int size = savedUser.getBlogList().size();
-        Blog savedBlog = savedUser.getBlogList().get(size-1);
 
         return savedBlog;
 
