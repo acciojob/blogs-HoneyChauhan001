@@ -48,7 +48,10 @@ public class ImageService {
         int x = Integer.parseInt(screenDimensions.substring(0,indexOfXScreen));
         int y = Integer.parseInt(screenDimensions.substring(indexOfXScreen+1));
 
-        int count = (x*y)/(a*b);
+        int heightRatio = x/a;
+        int widthRation = y/b;
+
+        int count = heightRatio*widthRation;
 
         return count;
 
