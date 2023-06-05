@@ -31,10 +31,9 @@ public class BlogService {
         blog.setContent(content);
         blog.setTitle(title);
         blog.setUser(user);
+        blog.setPubDate(new Date());
 
-        Blog savedBlog = blogRepository1.save(blog);
-
-        user.getBlogList().add(savedBlog);
+        user.getBlogList().add(blog);
         User savedUser = userRepository1.save(user);
 
         return blog;
